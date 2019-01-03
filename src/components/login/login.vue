@@ -26,24 +26,24 @@ export default {
       }
     }
   },
-  methods:{
-    async handleLogin(){
-      const res = await this.$http.post('login',this.formdata)
-        
-          console.log(res)
-          // 解构赋值
-          const {meta:{msg,status},data}=res.data
-          if(status===200) {
-            // 保存用户的token值.在后面页面中可以判断token值
-            const token=localStorage.setItem('token',data.token)
-            this.$router.push({name:'home'})
-            this.$message.success(msg)
-          }else {
-            this.$message.warning(msg)
-          }
-        }
+  methods: {
+    async handleLogin () {
+      const res = await this.$http.post('login', this.formdata)
+
+      console.log(res)
+      // 解构赋值
+      const {meta: {msg, status}, data} = res.data
+      if (status === 200) {
+        // 保存用户的token值.在后面页面中可以判断token值
+        const token = localStorage.setItem('token', data.token)
+        this.$router.push({name: 'home'})
+        this.$message.success(msg)
+      } else {
+        this.$message.warning(msg)
+      }
     }
   }
+}
 
 </script>
 <style>
@@ -53,7 +53,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 .login-wrap .login-form{
     background-color: #fff;

@@ -8,7 +8,7 @@
                  </div></el-col>
              <el-col :span="19" class="middle">
                  <div class="grid-content bg-purple-light">
-                    <h3>后台管理系统</h3> 
+                    <h3>后台管理系统</h3>
                  </div>
             </el-col>
              <el-col :span="1" class="logout">
@@ -37,7 +37,7 @@
           <span>用户列表</span>
         </template>
           </el-menu-item>
-     
+
       </el-submenu>
       <!-- 2 -->
       <el-submenu index="2">
@@ -59,7 +59,7 @@
           <span>权限列表</span>
         </template>
           </el-menu-item>
-     
+
       </el-submenu>
       <!-- 3 -->
       <el-submenu index="3">
@@ -88,7 +88,7 @@
           <span>商品分类</span>
         </template>
           </el-menu-item>
-     
+
       </el-submenu>
       <!-- 4 -->
       <el-submenu index="4">
@@ -103,7 +103,7 @@
           <span>订单列表</span>
         </template>
           </el-menu-item>
-     
+
       </el-submenu>
       <!-- 5 -->
       <el-submenu index="5">
@@ -118,7 +118,7 @@
           <span>数据报表</span>
         </template>
           </el-menu-item>
-     
+
       </el-submenu>
     </el-menu>
       </el-aside>
@@ -130,26 +130,24 @@
 </template>
 <script>
 export default {
-    // 在渲染之前,使用钩子函数
-    beforeCreate(){
-       const token=localStorage.getItem('token')
-       if(!token){
-           this.$router.push({name:'login'})
-       }
-    },
-    data(){
-
-    },
-    methods:{
-        hanleloginout(){
-            this.$message.success('退出成功')
-            localStorage.clear()
-            this.$router.push({name:'login'})
-        }
+  // 在渲染之前,使用钩子函数
+  beforeCreate () {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      this.$router.push({name: 'login'})
     }
-        
-    
-    
+  },
+  data () {
+    return {}
+  },
+  methods: {
+    hanleloginout () {
+      this.$message.success('退出成功')
+      localStorage.clear()
+      this.$router.push({name: 'login'})
+    }
+  }
+
 }
 </script>
 <style>
@@ -173,6 +171,6 @@ export default {
 .logout {
     line-height: 60px;
     text-decoration: none;
-    
+
 }
 </style>
