@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 import MyHttpServer from '@/plugins/http.js'
 import moment from 'moment'
+import myBread from '@/components/cuscom/myBread.vue'
 // 样式文件
 import '@/assets/css/index.css'
 
@@ -18,6 +19,8 @@ Vue.config.productionTip = false
 Vue.filter('formart', (v) => {
   return moment(v).format('YYYY-MM-DD')
 })
+// 全局组件
+Vue.component(myBread.name,myBread)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
