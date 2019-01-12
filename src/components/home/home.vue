@@ -100,6 +100,5 @@ export default {
 .logout {
     line-height: 60px;
     text-decoration: none;
-
 }
 </style>
